@@ -2,8 +2,14 @@ filebeat.prospectors:
   - type: log 
     enabled: true
     paths: 
-      - /var/log/csv/*.csv
-    tags: ["csv-log"]
+      - /var/log/dev/*.csv
+    tags: ["csv-log, dev-log"]
+
+  - type: log 
+    enabled: true
+    paths: 
+      - /var/log/prod/*.csv
+    tags: ["csv-log, prod-log]
 
 output.logstash:
   enabled: true
