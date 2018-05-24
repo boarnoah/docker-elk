@@ -14,3 +14,21 @@ discovery.zen.minimum_master_nodes: 1
 ## see https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
 #
 discovery.type: single-node
+
+searchguard.enterprise_modules_enabled: false
+# SearchGuard demo keys, not for production use TODO:
+# https://docs.search-guard.com/latest/tls-download-certificates
+searchguard.ssl.transport.pemcert_filepath: keys/esnode.pem
+searchguard.ssl.transport.pemkey_filepath: keys/esnode-key.pem
+searchguard.ssl.transport.pemtrustedcas_filepath: keys/root-ca.pem
+searchguard.ssl.transport.enforce_hostname_verification: false
+searchguard.ssl.http.enabled: true
+searchguard.ssl.http.pemcert_filepath: keys/esnode.pem
+searchguard.ssl.http.pemkey_filepath: keys/esnode-key.pem
+searchguard.ssl.http.pemtrustedcas_filepath: keys/root-ca.pem
+searchguard.allow_unsafe_democertificates: true
+searchguard.allow_default_init_sgindex: true
+searchguard.authcz.admin_dn:
+  - CN=kirk,OU=client,O=client,L=test,C=de
+
+searchguard.restapi.roles_enabled: ["sg_all_access"]

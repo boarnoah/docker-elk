@@ -4,4 +4,9 @@
 #
 server.name: kibana
 server.host: "0"
-elasticsearch.url: http://elasticsearch:9200
+elasticsearch.url: https://elasticsearch:9200
+
+# Not for production
+elasticsearch.username: "kibanaserver"
+elasticsearch.password: "kibanaserver"
+elasticsearch.ssl.verificationMode: none
